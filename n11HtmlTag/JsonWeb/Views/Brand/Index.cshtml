@@ -1,0 +1,32 @@
+﻿
+@model  IEnumerable<JsonWeb.Models.Brand>
+@{
+    Layout = null;
+}
+
+@using JsonWeb.Models
+@using (Html.BeginForm("Index", "Brand", FormMethod.Post))
+{
+
+
+    <table class="table table-bordered" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@Html.DisplayFor(modelItem => item.id) </th>
+                    <td>@Html.DisplayFor(mpdelItem => item.name)</td>
+
+
+                </tr>
+
+            }
+            <input type="submit" value="Ekle" />
+        </tbody>
+    </table>
+
+}
